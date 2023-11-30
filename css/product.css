@@ -1,0 +1,14 @@
+.helper {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 9999;
+    background: red;
+    font-size: 32px;
+}

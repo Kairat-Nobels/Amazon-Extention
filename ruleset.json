@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "||https://www.google-analytics.com^"
+        }
+    },
+    {
+        "id": 2,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "||https://www.facebook.com/tr^ ||https://connect.facebook.net^"
+        }
+    },
+    {
+        "id": 3,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "||https://analytics.twitter.com^"
+        }
+    },
+    {
+        "id": 4,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "||https://stats.g.doubleclick.net^ ||https://www.googletagmanager.com^"
+        }
+    },
+    {
+        "id": 5,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "||https://mc.yandex.ru^ ||https://yandex.ru^"
+        }
+    },
+    {
+        "id": 6,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "||www.amazon.com/acp/"
+        }
+    }
+]
