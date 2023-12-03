@@ -41,12 +41,13 @@ function sendNotificationWithButtons(visitedCount)
     chrome.notifications.create('notificationWithButtons', {
         type: 'basic',
         iconUrl: '../icons/logo.png',
-        title: 'Amazon Tracker',
+        title: 'Amazon price trends',
         message: `Today you've viewed ${visitedCount} products on Amazon.`,
         buttons: [
             { title: 'Close' },
             { title: 'View Products' }
-        ]
+        ],
+        silent: false
     });
 }
 
@@ -57,13 +58,13 @@ chrome.notifications.onButtonClicked.addListener(function (notificationId, butto
         if (buttonIndex === 0) {
             chrome.notifications.clear('notificationWithButtons');
         } else if (buttonIndex === 1) {
-            chrome.tabs.create({ url: chrome.runtime.getURL('page/index.html') });
+            chrome.tabs.create({ url: chrome.runtime.getURL('page/product.html') });
         }
     }
 });
 
 // fetches the active tabs on Amazon and stores their IDs in the amazonTabs array
-chrome.tabs.query({ url: 'https://www.amazon.co/*' }, function (tabs)
+chrome.tabs.query({ url: 'https://www.amazon.c/*' }, function (tabs)
 {
     amazonTabs = tabs.map(tab => tab.id);
 });
@@ -76,7 +77,7 @@ chrome.tabs.onCreated.addListener(function (tab)
     }
 });
 
-// Send a notification when all amazon tabs have closed
+// Send a notification after 1sec when all amazon tabs have closed
 chrome.tabs.onRemoved.addListener(function (tabId)
 {
     const index = amazonTabs.indexOf(tabId);
@@ -84,11 +85,17 @@ chrome.tabs.onRemoved.addListener(function (tabId)
     if (index !== -1) {
         amazonTabs.splice(index, 1);
         if (amazonTabs.length === 0) {
-            const today = new Date().toLocaleDateString();
+            chrome.alarms.create('sendNotificationDelay', { delayInMinutes: 1 / 60 });
+
             chrome.cookies.get({ url: 'https://amazon.com', name: 'visitedProducts' }, function (cookie)
             {
                 const visitedProducts = cookie ? parseInt(cookie.value) : 0;
-                sendNotificationWithButtons(visitedProducts);
+                chrome.alarms.onAlarm.addListener(function (alarm)
+                {
+                    if (alarm.name === 'sendNotificationDelay') {
+                        sendNotificationWithButtons(visitedProducts);
+                    }
+                });
             });
         }
     }

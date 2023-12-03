@@ -1,0 +1,181 @@
+@import './libs/_normalize'
+.small-screen
+    padding: 10px 30px
+    gap: 10px
+.large-screen
+    padding: 10px 90px
+    gap: 30px
+header
+    background: #D9D9D9
+    display: flex
+    position: sticky
+    top: 0
+    left: 0
+    width: 100%
+    justify-content: space-between
+    align-items: center
+    z-index: 100
+    .goBtn
+        padding: 10px 16px
+        border-radius: 10px
+        text-align: center
+        background-color: $orange
+
+        h2
+            color: #fff
+            font-weight: 600
+
+    a
+        text-decoration: none
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 2px
+        // background-color: $orange
+        background-color: #fff
+        gap: 4px
+        padding: 5px
+        border-radius: 10px
+        div
+            h3
+                font-size: 18px
+                font-weight: 600
+                color: $orange
+            p
+                font-size: 14px
+                font-weight: 600
+                color: $green
+        img
+            width: 60px
+            border-radius: 10px
+.container
+    max-width: 1200px
+    padding: 0 10px
+    width: 100%
+    margin: 0 auto
+main
+    .head
+        margin-top: 20px
+        text-align: center
+        h1
+            color: #000
+            font-family: Montserrat
+            font-size: 28px
+            font-weight: 600
+        p
+            color: #293844
+            font-size: 20px
+            line-height: 28px
+            font-weight: 600
+            margin-top: 10px
+
+    .slider
+        margin-top: 30px
+        h2
+            width: 370px
+            text-align: center
+            font-size: 24px
+            font-weight: 600
+            padding: 5px 10px
+            border-radius: 8px
+            background-color: $orange
+            color: #fff
+            margin: 10px auto 20px
+
+    .whatCan
+        margin-top: 80px
+        h2
+            text-align: center
+            color: #FB7433
+            font-family: Michroma
+            font-size: 22px
+            font-weight: 600
+        .icons
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-wrap: wrap
+            gap: 20px 50px
+            margin: 20px auto
+            width: 70%
+            .icon
+                width: 280px
+                display: flex
+                align-items: center
+                gap: 15px
+                margin-top: 20px
+                img
+                    width: 40px
+                h4
+                    color: #000
+                    font-family: Michroma
+                    font-size: 18px
+                    font-weight: 400
+
+.banner
+    margin-top: 80px
+    background-image: url(../icons/about/bgAmazon.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    padding: 20px 0
+    height: 370px
+    h3
+        width: 80%
+        text-align: center
+        color: #FB7433
+        font-family: Michroma
+        font-size: 22px
+        font-weight: 600
+        margin: 20px auto 0
+    .browsers
+        margin-top: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 25px
+        .item
+            width: 60px
+            img
+                width: 100%
+
+.footer
+    padding: 30px 20px
+    background: #D9D9D9
+    h3
+        text-align: center
+        color: #FB7433
+        font-family: Michroma
+        font-size: 22px
+        font-weight: 600
+    p
+        font-size: 20px
+        font-weight: 500
+        margin-top: 30px
+        color: #040404
+        text-align: center
+    .technology
+        p
+            text-align: center
+            color: #FB7433
+            font-family: Michroma
+            font-size: 18px
+            font-weight: 600
+
+        ul
+            display: flex
+            flex-wrap: wrap
+            gap: 40px
+            align-items: center
+            justify-content: center
+            flex-wrap: wrap
+            li
+                font-size: 16px
+                font-weight: 500
+                margin-top: 30px
+                color: #040404
+                margin-top: 10px
+
+@media (max-width: 768px)
+    #aboutCard, .largeScreen
+        padding: 10px
+        gap: 10px

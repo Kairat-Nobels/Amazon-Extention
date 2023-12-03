@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #232323;
+}
+
+.popupDiv {
+  width: 300px;
+  padding: 30px 20px;
+  background: #fff;
+}
+.popupDiv .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.popupDiv .head h1 {
+  color: #ec7137;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.popupDiv .head .head-img {
+  width: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.popupDiv .head .head-img img {
+  width: 100%;
+}
+.popupDiv .content {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.popupDiv .content .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 80px;
+}
+.popupDiv .content .item:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+.popupDiv .content .item:hover h3 {
+  text-decoration: underline;
+  color: #ec7137;
+}
+.popupDiv .content .item .itemImg {
+  width: 38px;
+}
+.popupDiv .content .item .itemImg img {
+  width: 100%;
+}
+.popupDiv .content .item h3 {
+  color: #ec7137;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}

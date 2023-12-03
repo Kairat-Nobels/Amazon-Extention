@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Amazon Price Tracker",
-    "description": "Price Tracker for Amazon",
+    "name": "Amazon Price Trends",
+    "description": "Amazon Price Trends - is the Price Tracker for Amazon. This extension helps to track the history of changes in the prices of goods on Amazon over the past months and find out whether the offered discount is deceiving us. When viewing a product, it immediately calculates by how many percent the price has changed compared to the previous real price.",
     "version": "1.0",
     "permissions": [
         "alarms",
@@ -21,7 +21,7 @@
         "type": "module"
     },
     "action": {
-        "default_title": "Amazon Price Tracker",
+        "default_title": "Amazon Price Trends",
         "default_popup": "popup/popup.html",
         "default_icon": "icons/logo.png"
     },
@@ -45,6 +45,7 @@
             "js": [
                 "js/content.js"
             ],
+            "type": "module",
             "matches": [
                 "*://*.amazon.com/*"
             ]

@@ -57,7 +57,8 @@ function displayPriceInCorner(productCode)
         const currentPrice = parseFloat(currentPriceText.replace(/[^0-9.-]+/g, ''));
 
         const productUrl = window.location.href;
-        const nameProduct = document.body.querySelector('#title_feature_div').querySelector('h1').textContent;
+        let nameProduct = document.body.querySelector('#title_feature_div').querySelector('h1') || document.body.querySelector('#title_feature_div').querySelector('#title');
+        nameProduct = nameProduct.textContent
         chrome.storage.sync.get(['products'], function (result)
         {
             const existingData = result.products || [];
@@ -81,44 +82,92 @@ function displayPriceInCorner(productCode)
             const div = document.createElement('div');
             div.id = 'procentProduct'
             div.innerHTML = procent > 0 ? `
-            <h4>${Math.abs(procent)}% more expensive than last month</h4>
+            <h4 style="color: #fff; font-family: Montserrat, Arial, sans-serif;"><span style="
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 500;
+                ">${Math.abs(procent)}%</span> more expensive than last month</h4>
             ` :
                 `
-                <h4>${Math.abs(procent)}% cheaper than last month</h4>
+                <h4 style="color: #fff; font-family: Montserrat, Arial, sans-serif;"><span style="
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 500;
+                ">${Math.abs(procent)}%</span> cheaper than last month</h4>
             `
+            const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            const currentMonth = monthNames[new Date().getMonth()];
+            const previousMonth1 = monthNames[new Date().getMonth() - 1];
+            const previousMonth2 = monthNames[new Date().getMonth() - 2];
+
             const tableContent = document.createElement('div')
+            tableContent.style = `
+            position: relative;
+            padding: 5px 10px;
+            `
             const title = document.createElement('h3')
+            title.style = `
+                border-radius: 7px;
+                margin: 5px 10px 12px 0px;
+                padding: 5px 14px;
+                background: #FB7433;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                color: #fff;
+                font-family: Montserrat, Arial, sans-serif;
+                font-size: 20px;
+                font-weight: 500;`;
             title.textContent = 'Prices for previous months'
             tableContent.appendChild(title)
             const priceInfoTable = document.createElement('table');
-            priceInfoTable.style.border = '1px solid black';
+            priceInfoTable.style = `margin: 0; font-size: 20px;`
             priceInfoTable.innerHTML = `
-          <tr>
-              <th>This month</th>
-              <th>Last month</th>
-              <th>2 month ago</th>
+          <tr style="color: #040404; font-family: Montserrat, Arial, sans-serif;font-size: 16px;font-weight: 600; margin-bottom: -5px">
+              <td>${currentMonth}</td>
+              <td>${previousMonth1}</td>
+              <td>${previousMonth2}</td>
           </tr>
-          <tr>
+          <tr style="color: #FB7433; font-family: Montserrat, Arial, sans-serif;font-size: 20px;font-weight: 500;">
               <td>${currentPrice.toFixed(2)} $</td>
               <td>${previousPrices[1].toFixed(2)} $</td>
               <td>${previousPrices[0].toFixed(2)} $</td>
           </tr>
       `;
-            tableContent.appendChild(priceInfoTable)
 
             const locationInfo = document.createElement('div');
             locationInfo.id = 'amazonLocationInfo';
             document.body.appendChild(locationInfo);
+            locationInfo.innerHTML = ''
             locationInfo.appendChild(div);
 
             let opened = false;
-
-            locationInfo.onclick = (e) =>
+            const xbtn = document.createElement('button');
+            xbtn.textContent = 'x'
+            xbtn.style = `position: absolute;
+                top: -22px;
+                right: -10px;
+                font-size: 30px;
+                paddingd: 4px;
+                font-weight: 600;
+                border: none;
+                font-family: cursive;
+                outline: none;
+                background: transparent;`
+            tableContent.appendChild(priceInfoTable);
+            tableContent.appendChild(xbtn);
+            div.onclick = (e) =>
             {
                 e.stopPropagation()
                 opened = true;
                 locationInfo.innerHTML = ''
                 locationInfo.appendChild(tableContent)
+                locationInfo.style.padding = '10px'
+            }
+            tableContent.onclick = (e) =>
+            {
+                e.stopPropagation()
             }
             document.body.onclick = (e) =>
             {
@@ -126,44 +175,51 @@ function displayPriceInCorner(productCode)
                     opened = false;
                     locationInfo.innerHTML = ''
                     locationInfo.appendChild(div);
+                    locationInfo.style.padding = '0px'
                 }
+            }
+            xbtn.onclick = () =>
+            {
+                opened = false;
+                locationInfo.innerHTML = ''
+                locationInfo.appendChild(div);
+                locationInfo.style.padding = '0px'
             }
 
             // styles
             locationInfo.style.cssText = `
                 position: fixed;
-                bottom: 10px;
+                bottom: 40px;
                 left: 10px;
-                background-color: white;
-                padding: 5px;
-                border: 1px solid black;
+                background-color: #fff;
+                border: 2px solid black;
+                border-radius: 10px;
                 z-index: 9999;
+                overflow: hidden;
             `;
             div.style.cssText = `
+                border-radius: 8px;
                 cursor: pointer;
-                background-color: orange;
+                background-color: #FB7433;
+                padding: 10px;
             `;
-
 
             // save data to chrome storage
             if (!existingProduct) {
                 const newData = {
+                    actualPrice: `${currentPrice.toFixed(2)} $`,
+                    agoMonth: `${previousPrices[0].toFixed(2)} $`,
+                    ago2Month: `${previousPrices[1].toFixed(2)} $`,
                     code: productCode,
                     name: nameProduct.trim(),
                     url: productUrl,
-                    actualPrice: `${currentPrice.toFixed(2)} $`,
-                    agoMonth: `${previousPrices[0].toFixed(2)} $`,
-                    ago2Month: `${previousPrices[1].toFixed(2)} $`
                 };
-                if (existingData.length > 14) {
+                if (existingData.length > 11) {
                     existingData.shift();
                 }
                 existingData.push(newData);
+                saveData(existingData)
 
-                chrome.storage.sync.set({ products: existingData }, function ()
-                {
-                    console.log('The data was successfully saved to chrome.storage.');
-                });
             } else {
                 console.log('The product code already exists in the storage.');
             }
@@ -180,16 +236,27 @@ function displayPriceInCorner(productCode)
 function displayLocationInfo()
 {
     locationInfo.id = 'amazonLocationInfo';
-    locationInfo.textContent = 'Вы находитесь на Amazon';
-    locationInfo.style.position = 'fixed';
-    locationInfo.style.bottom = '10px';
-    locationInfo.style.left = '10px';
-    locationInfo.style.backgroundColor = 'white';
-    locationInfo.style.padding = '5px';
-    locationInfo.style.border = '1px solid black';
-    locationInfo.style.zIndex = '9999';
+    locationInfo.innerHTML = '<img width="80" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaACHqtqC5gQndyjL0nSzpcU8naH95kET0HisoEDytFUI7kfKruLOr5GOVo1ZO8RIZ1q2IDtvrVr64bqHDxa2v-6zg77FJzPft1zFsHaqcTgAuxYGs_sM5qYFZXo9q3uNjAsEn3AK4xZr_Yyr2d0T9vkr2c3NpcP5Y7i2YgbbZQbiCv4mrRYoZ3_F4OuI/s320/amazLog.png" alt="img" />'
+    locationInfo.style.cssText = `
+                position: fixed;
+                bottom: 40px;
+                left: 10px;
+                background-color: #fff;
+                width: 70px;
+                border-radius: 10px;
+                z-index: 9999;
+                overflow: hidden;
+            `;
 
     document.body.appendChild(locationInfo);
 }
 
 window.onload = displayPriceOrLocationInfo;
+
+function saveData(data)
+{
+    chrome.storage.sync.set({ products: data }, function ()
+    {
+        console.log('The data was successfully saved to chrome.storage.');
+    });
+}

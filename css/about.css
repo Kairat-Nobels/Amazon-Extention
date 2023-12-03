@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #232323;
+}
+
+.small-screen {
+  padding: 10px 30px;
+  gap: 10px;
+}
+
+.large-screen {
+  padding: 10px 90px;
+  gap: 30px;
+}
+
+header {
+  background: #D9D9D9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
+}
+header .goBtn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #ec7137;
+}
+header .goBtn h2 {
+  color: #fff;
+  font-weight: 600;
+}
+header a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2px;
+  background-color: #fff;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 10px;
+}
+header a div h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ec7137;
+}
+header a div p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5ba72b;
+}
+header a img {
+  width: 60px;
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main .head {
+  margin-top: 20px;
+  text-align: center;
+}
+main .head h1 {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 600;
+}
+main .head p {
+  color: #293844;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+main .slider {
+  margin-top: 30px;
+}
+main .slider h2 {
+  width: 370px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #ec7137;
+  color: #fff;
+  margin: 10px auto 20px;
+}
+main .whatCan {
+  margin-top: 80px;
+}
+main .whatCan h2 {
+  text-align: center;
+  color: #FB7433;
+  font-family: Michroma;
+  font-size: 22px;
+  font-weight: 600;
+}
+main .whatCan .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px 50px;
+  margin: 20px auto;
+  width: 70%;
+}
+main .whatCan .icons .icon {
+  width: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+main .whatCan .icons .icon img {
+  width: 40px;
+}
+main .whatCan .icons .icon h4 {
+  color: #000;
+  font-family: Michroma;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.banner {
+  margin-top: 80px;
+  background-image: url(../icons/about/bgAmazon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 0;
+  height: 370px;
+}
+.banner h3 {
+  width: 80%;
+  text-align: center;
+  color: #FB7433;
+  font-family: Michroma;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px auto 0;
+}
+.banner .browsers {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+}
+.banner .browsers .item {
+  width: 60px;
+}
+.banner .browsers .item img {
+  width: 100%;
+}
+
+.footer {
+  padding: 30px 20px;
+  background: #D9D9D9;
+}
+.footer h3 {
+  text-align: center;
+  color: #FB7433;
+  font-family: Michroma;
+  font-size: 22px;
+  font-weight: 600;
+}
+.footer p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 30px;
+  color: #040404;
+  text-align: center;
+}
+.footer .technology p {
+  text-align: center;
+  color: #FB7433;
+  font-family: Michroma;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer .technology ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  flex-wrap: wrap;
+}
+.footer .technology ul li {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 30px;
+  color: #040404;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  #aboutCard, .largeScreen {
+    padding: 10px;
+    gap: 10px;
+  }
+}

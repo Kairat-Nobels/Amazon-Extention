@@ -1,14 +1,154 @@
-.helper {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    background-color: #fff;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: bold;
-    z-index: 9999;
-    background: red;
-    font-size: 32px;
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #232323;
+}
+
+body {
+  background: #272c44;
+  padding: 20px;
+}
+
+.products h1 {
+  color: #FB7433;
+  font-family: Michroma;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+.products ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 30px auto 10px;
+  width: 980px;
+}
+.products ul li {
+  width: 426px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000;
+}
+.products ul li .card {
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background: #EAEAEA;
+  background: #ec7137;
+}
+.products ul li .card h3 {
+  color: #040404;
+  font-family: Montserrat;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+.products ul li .cardItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.products ul li .cardItem div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+}
+.products ul li .cardItem div .month {
+  color: #181818;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+}
+.products ul li .cardItem div p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+}
+.products ul li .card .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+  margin-top: 20px;
+}
+.products ul li .card .actions .btnForGo, .products ul li .card .actions button {
+  border-radius: 6px;
+  display: block;
+  width: 105px;
+  background: #7EC23B;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #040404;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+.products ul li h2 {
+  color: #040404;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
 }

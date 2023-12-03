@@ -6,16 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About page</title>
     <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/slider.css">
 </head>
 
 <body>
-    <div id="aboutCard">
-        <h3>Amazon Trades</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, non debitis nisi quasi omnis soluta
-            molestiae voluptatem consequuntur adipisci ratione pariatur, recusandae at reiciendis, repellendus odit fuga
-            voluptatum. Nemo, explicabo.</p>
-        <div><img src="" alt="img"></div>
-    </div>
+    <header class="large-screen small-screen" id="aboutCard">
+        <a href="about.html">
+            <img src="" alt="">
+            <div>
+                <h3></h3>
+                <p>Your helper on Amazon</p>
+            </div>
+        </a>
+        <a class="goBtn" href="https://www.amazon.com">
+            <h2>Go to the Amazon</h2>
+        </a>
+    </header>
+    <main class="container">
+        <section class="head">
+            <h1>Amazon Price Trends - browser extention for Amazon</h1>
+            <p id="description"></p>
+        </section>
+        <section class="slider">
+            <h2>How to use this extention?</h2>
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <div class="slideImg"><img src="../icons/slider/slide0.png" style="width:100%"></div>
+                    <div class="text">Navigation on extention popup</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="slideImg">
+
+                        <img src="../icons/slider/slide1.png" style="width:100%">
+                    </div>
+                    <div class="text">When you are in the amazon page, extention starts working</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="slideImg">
+
+                        <img src="../icons/slider/slide2.png" style="width:100%">
+                    </div>
+                    <div class="text">When you are in product page, automaticaly calculate procent differens</div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="slideImg">
+
+                        <img src="../icons/slider/slide4.png" style="width:100%">
+                    </div>
+                    <div class="text">After click you can see price for last monthes</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev"><img style="transform: rotate(180deg)" src="../icons/slider/arrow.svg" alt="img"></a>
+                <a class="next"><img src="../icons/slider/arrow.svg" alt="img"></a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+        <section class="whatCan">
+            <h2>WHat Amazon Price Trends can do?</h2>
+            <div class="icons">
+                <div class="icon">
+                    <div class="iconImg"><img src="../icons/about/icon1.svg" alt="img"></div>
+                    <h4>Track the price history</h4>
+                </div>
+                <div class="icon">
+                    <div class="iconImg"><img src="../icons/about/block.svg" alt="img"></div>
+                    <h4>Block price scammers</h4>
+                </div>
+                <div class="icon">
+                    <div class="iconImg"><img src="../icons/about/icon4.svg" alt="img"></div>
+                    <h4>Count todays visited products</h4>
+                </div>
+                <div class="icon">
+                    <div class="iconImg"><img src="../icons/about/icon2.svg" alt="img"></div>
+                    <h4>Calculates the price difference</h4>
+                </div>
+                <div class="icon">
+                    <div class="iconImg"><img src="../icons/about/icon3.svg" alt="img"></div>
+                    <h4>saves last viewed products</h4>
+                </div>
+                <div class="icon">
+                    <div class="iconImg"><img src="../icons/about/icon5.svg" alt="img"></div>
+                    <h4>save product codes</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="banner">
+        <h3>Amazon Price Trends extension is not compatible with mobile device. You can install Amazon Price Trends on
+            your computer.</h3>
+        <div class="browsers">
+            <div class="item"><img src="https://alihelper.net/img/common/icons/chrome-new.svg" alt="img"></div>
+            <div class="item"><img src="https://alihelper.net/img/common/icons/yandex.svg" alt="img"></div>
+            <div class="item"><img src="https://alihelper.net/img/common/icons/opera.svg" alt="img"></div>
+            <div class="item"><img src="https://alihelper.net/img/common/icons/firefox.svg" alt="img"></div>
+            <div class="item"><img src="https://alihelper.net/img/common/icons/edge.svg" alt="img"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <h3>About Amazon Price Trends extentions detail information</h3>
+
+            <p>Version: <span id="version"></span></p>
+            <div class="technology">
+                <p>Technologies for creating extention:</p>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </footer>
 
 
 </body>
