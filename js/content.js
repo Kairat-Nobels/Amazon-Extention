@@ -82,17 +82,17 @@ function displayPriceInCorner(productCode)
             const div = document.createElement('div');
             div.id = 'procentProduct'
             div.innerHTML = procent > 0 ? `
-            <h4 style="color: #fff; font-family: Montserrat, Arial, sans-serif;"><span style="
-                    color: #fff;
+            <h4 style="color: #000; font-family: Niramit, Arial, sans-serif;"><span style="
+                    color: #000;
                     font-size: 20px;
-                    font-weight: 500;
+                    font-weight: 600;
                 ">${Math.abs(procent)}%</span> more expensive than last month</h4>
             ` :
                 `
-                <h4 style="color: #fff; font-family: Montserrat, Arial, sans-serif;"><span style="
-                    color: #fff;
+                <h4 style="color: #000; font-family: Niramit, Arial, sans-serif;"><span style="
+                    color: #000;
                     font-size: 20px;
-                    font-weight: 500;
+                    font-weight: 600;
                 ">${Math.abs(procent)}%</span> cheaper than last month</h4>
             `
             const monthNames = [
@@ -113,26 +113,27 @@ function displayPriceInCorner(productCode)
                 border-radius: 7px;
                 margin: 5px 10px 12px 0px;
                 padding: 5px 14px;
-                background: #FB7433;
+                border: 1px solid #000;
+                background: #00FFB2;
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                color: #fff;
+                color: #000;
                 font-family: Montserrat, Arial, sans-serif;
                 font-size: 20px;
                 font-weight: 500;`;
             title.textContent = 'Prices for previous months'
             tableContent.appendChild(title)
             const priceInfoTable = document.createElement('table');
-            priceInfoTable.style = `margin: 0; font-size: 20px;`
+            priceInfoTable.style = `margin: 0; font-size: 20px; table-layout: auto; width: 100%;`
             priceInfoTable.innerHTML = `
           <tr style="color: #040404; font-family: Montserrat, Arial, sans-serif;font-size: 16px;font-weight: 600; margin-bottom: -5px">
               <td>${currentMonth}</td>
               <td>${previousMonth1}</td>
               <td>${previousMonth2}</td>
           </tr>
-          <tr style="color: #FB7433; font-family: Montserrat, Arial, sans-serif;font-size: 20px;font-weight: 500;">
-              <td>${currentPrice.toFixed(2)} $</td>
-              <td>${previousPrices[1].toFixed(2)} $</td>
-              <td>${previousPrices[0].toFixed(2)} $</td>
+          <tr style="color: #9643FF; font-family: Montserrat, Arial, sans-serif;font-size: 20px;font-weight: 700;">
+              <td>${currentPrice.toFixed(2)}$</td>
+              <td>${previousPrices[1].toFixed(2)}$</td>
+              <td>${previousPrices[0].toFixed(2)}$</td>
           </tr>
       `;
 
@@ -191,17 +192,17 @@ function displayPriceInCorner(productCode)
                 position: fixed;
                 bottom: 40px;
                 left: 10px;
-                background-color: #fff;
-                border: 2px solid black;
-                border-radius: 10px;
+                border-radius: 12px;
+                border: 2px solid #000;
+                background: #C0C0C0;
                 z-index: 9999;
                 overflow: hidden;
             `;
             div.style.cssText = `
-                border-radius: 8px;
+                background: #00FFB2;
                 cursor: pointer;
-                background-color: #FB7433;
-                padding: 10px;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                padding: 10px 14px;
             `;
 
             // save data to chrome storage
@@ -236,7 +237,7 @@ function displayPriceInCorner(productCode)
 function displayLocationInfo()
 {
     locationInfo.id = 'amazonLocationInfo';
-    locationInfo.innerHTML = '<img width="80" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaACHqtqC5gQndyjL0nSzpcU8naH95kET0HisoEDytFUI7kfKruLOr5GOVo1ZO8RIZ1q2IDtvrVr64bqHDxa2v-6zg77FJzPft1zFsHaqcTgAuxYGs_sM5qYFZXo9q3uNjAsEn3AK4xZr_Yyr2d0T9vkr2c3NpcP5Y7i2YgbbZQbiCv4mrRYoZ3_F4OuI/s320/amazLog.png" alt="img" />'
+    locationInfo.innerHTML = '<img width="120" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqZPXlanwZdY8tonG5i8SMUJvIM7taxDOSnG8K-Ymvwb_uWba1bopkxbTpKgpMxUBjNr6VJ1TRopQnM6EDJSz2QIHgcpA1DHoYzKK91tOA9j8ctTfsPxO4HFIKbx-XfJIEFCiWFyd8QqDYUkKOWqDSZsc71ygE_TZgeeHQ_kl0OZCVQjT2_F4WbW1aAyM/w320-h244/logo.png" alt="img" />'
     locationInfo.style.cssText = `
                 position: fixed;
                 bottom: 40px;

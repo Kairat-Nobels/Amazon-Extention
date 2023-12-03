@@ -1,3 +1,17 @@
+// on first generation
+chrome.storage.sync.get('products', function (data)
+{
+    if (Object.keys(data).length === 0 && data.constructor === Object) {
+        chrome.storage.sync.set({ 'products': [] }, function ()
+        {
+            console.log('array created successfully');
+        });
+    } else {
+        var products = data.products;
+        console.log('your products":', products);
+    }
+});
+
 // for collection open amazon tabs
 let amazonTabs = [];
 
@@ -41,11 +55,11 @@ function sendNotificationWithButtons(visitedCount)
     chrome.notifications.create('notificationWithButtons', {
         type: 'basic',
         iconUrl: '../icons/logo.png',
-        title: 'Amazon price trends',
+        title: 'AkchaTab Tracker',
         message: `Today you've viewed ${visitedCount} products on Amazon.`,
         buttons: [
             { title: 'Close' },
-            { title: 'View Products' }
+            { title: 'Go Products' }
         ],
         silent: false
     });

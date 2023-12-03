@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Niramit:wght@400;500;600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -42,8 +42,12 @@ h5 {
   gap: 30px;
 }
 
+body {
+  background: #181818;
+}
+
 header {
-  background: #D9D9D9;
+  background: #C0C0C0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,13 +64,18 @@ header {
   z-index: 100;
 }
 header .goBtn {
-  padding: 10px 16px;
+  padding: 12px 22px;
   border-radius: 10px;
   text-align: center;
-  background-color: #ec7137;
+  border-radius: 8px;
+  background: #00FFB2;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 header .goBtn h2 {
-  color: #fff;
+  color: #000;
+  text-align: center;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
   font-weight: 600;
 }
 header a {
@@ -81,23 +90,24 @@ header a {
       -ms-flex-align: center;
           align-items: center;
   gap: 2px;
-  background-color: #fff;
+  padding-right: 10px;
+  background-color: #181818;
   gap: 4px;
-  padding: 5px;
   border-radius: 10px;
+  overflow: hidden;
 }
 header a div h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #ec7137;
+  color: #9643FF;
 }
 header a div p {
   font-size: 14px;
   font-weight: 600;
-  color: #5ba72b;
+  color: #00FFB2;
 }
 header a img {
-  width: 60px;
+  width: 70px;
   border-radius: 10px;
 }
 
@@ -113,13 +123,14 @@ main .head {
   text-align: center;
 }
 main .head h1 {
-  color: #000;
-  font-family: Montserrat;
+  color: #9643FF;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
   font-size: 28px;
   font-weight: 600;
 }
 main .head p {
-  color: #293844;
+  color: #00FFB2;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
@@ -129,23 +140,20 @@ main .slider {
   margin-top: 30px;
 }
 main .slider h2 {
-  width: 370px;
   text-align: center;
   font-size: 24px;
   font-weight: 600;
-  padding: 5px 10px;
-  border-radius: 8px;
-  background-color: #ec7137;
-  color: #fff;
-  margin: 10px auto 20px;
+  color: #9643FF;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
+  margin: 10px 0 20px;
 }
 main .whatCan {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 main .whatCan h2 {
   text-align: center;
-  color: #FB7433;
-  font-family: Michroma;
+  color: #9643FF;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 600;
 }
@@ -153,20 +161,19 @@ main .whatCan .icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 20px 50px;
-  margin: 20px auto;
-  width: 70%;
+  gap: 50px;
+  margin: 50px auto;
+  width: 80%;
 }
 main .whatCan .icons .icon {
-  width: 280px;
+  width: 292px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,31 +187,37 @@ main .whatCan .icons .icon img {
   width: 40px;
 }
 main .whatCan .icons .icon h4 {
-  color: #000;
-  font-family: Michroma;
+  color: #00FFB2;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
   font-size: 18px;
-  font-weight: 400;
 }
 
 .banner {
   margin-top: 80px;
-  background-image: url(../icons/about/bgAmazon.jpg);
+  background-image: url(../icons/about/background.jpg);
   background-repeat: no-repeat;
+  background-position: 0px -115px;
   background-size: cover;
-  padding: 20px 0;
-  height: 370px;
+  height: 500px;
+}
+.banner .wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
 }
 .banner h3 {
   width: 80%;
   text-align: center;
-  color: #FB7433;
-  font-family: Michroma;
+  color: #fff;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 600;
-  margin: 20px auto 0;
+  margin: 50px auto 0;
+  padding-top: 30px;
 }
 .banner .browsers {
-  margin-top: 20px;
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,12 +238,13 @@ main .whatCan .icons .icon h4 {
 
 .footer {
   padding: 30px 20px;
-  background: #D9D9D9;
+  background: #181818;
+  margin-top: 50px;
 }
 .footer h3 {
   text-align: center;
-  color: #FB7433;
-  font-family: Michroma;
+  color: #9643FF;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 600;
 }
@@ -238,17 +252,24 @@ main .whatCan .icons .icon h4 {
   font-size: 20px;
   font-weight: 500;
   margin-top: 30px;
-  color: #040404;
+  color: #00FFB2;
   text-align: center;
+}
+.footer p span {
+  color: #00FFB2;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
 }
 .footer .technology p {
   text-align: center;
-  color: #FB7433;
-  font-family: Michroma;
-  font-size: 18px;
+  color: #9643FF;
+  font-family: Niramit, Arial, Helvetica, sans-serif;
+  font-size: 22px;
   font-weight: 600;
 }
 .footer .technology ul {
+  margin: 30px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,10 +285,10 @@ main .whatCan .icons .icon h4 {
   flex-wrap: wrap;
 }
 .footer .technology ul li {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   margin-top: 30px;
-  color: #040404;
+  color: #00FFB2;
   margin-top: 10px;
 }
 

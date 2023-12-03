@@ -32,7 +32,7 @@ chrome.storage.sync.get(['products'], function (result)
 
             // create delete functional
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete product';
+            deleteButton.textContent = 'Delete';
             deleteButton.addEventListener('click', () =>
             {
                 const updatedProducts = products.filter(p => p.code !== product.code);
@@ -59,7 +59,7 @@ chrome.storage.sync.get(['products'], function (result)
                 </div>
             </div>
             <div class="actions">
-                <a href="${product.url}" class="btnForGo" target="_blank">Look in the store</a>
+                <a href="${product.url}" class="btnForGo" target="_blank">Store</a>
             </div>
         `;
             table.innerHTML = tableContent;
@@ -71,7 +71,7 @@ chrome.storage.sync.get(['products'], function (result)
         });
     }
     else {
-        h1.textContent = 'Your list of recently viewed products on Amazon is empty.'
+        h1.textContent = 'Your list of recently viewed products on AkchaTap is empty.'
     }
 });
 

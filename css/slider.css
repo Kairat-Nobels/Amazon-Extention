@@ -18,7 +18,12 @@
   width: 520px;
   margin: 0 auto;
   height: 370px;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
+.slideImg img {
+  border-radius: 10px;
 }
 
 /* Next & previous buttons */
@@ -48,9 +53,9 @@
 
 /* Caption text */
 .text {
-  color: #ec7137;
-  font-size: 16px;
-  padding: 8px 12px;
+  color: #00FFB2;
+  font-size: 18px;
+  padding: 4px 12px;
   font-weight: 700;
   position: absolute;
   bottom: 8px;
@@ -73,7 +78,7 @@
 
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: #9643FF;
 }
 
 /* Fading animation */

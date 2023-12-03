@@ -5,8 +5,12 @@
 .large-screen
     padding: 10px 90px
     gap: 30px
+
+body
+    background: #181818
+
 header
-    background: #D9D9D9
+    background: #C0C0C0
     display: flex
     position: sticky
     top: 0
@@ -16,13 +20,17 @@ header
     align-items: center
     z-index: 100
     .goBtn
-        padding: 10px 16px
+        padding: 12px 22px
         border-radius: 10px
         text-align: center
-        background-color: $orange
+        border-radius: 8px
+        background: #00FFB2
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
 
         h2
-            color: #fff
+            color: #000
+            text-align: center
+            font-family: Niramit, Arial, Helvetica, sans-serif
             font-weight: 600
 
     a
@@ -31,23 +39,24 @@ header
         justify-content: center
         align-items: center
         gap: 2px
-        // background-color: $orange
-        background-color: #fff
+        padding-right: 10px
+        background-color: #181818
         gap: 4px
-        padding: 5px
         border-radius: 10px
+        overflow: hidden
         div
             h3
                 font-size: 18px
                 font-weight: 600
-                color: $orange
+                color: #9643FF
             p
                 font-size: 14px
                 font-weight: 600
-                color: $green
+                color: #00FFB2
         img
-            width: 60px
+            width: 70px
             border-radius: 10px
+
 .container
     max-width: 1200px
     padding: 0 10px
@@ -58,12 +67,13 @@ main
         margin-top: 20px
         text-align: center
         h1
-            color: #000
-            font-family: Montserrat
+            color: #9643FF
+            font-family: Niramit, Arial, Helvetica, sans-serif
             font-size: 28px
             font-weight: 600
         p
-            color: #293844
+            color: #00FFB2
+            font-family: Niramit, Arial, Helvetica, sans-serif
             font-size: 20px
             line-height: 28px
             font-weight: 600
@@ -72,34 +82,31 @@ main
     .slider
         margin-top: 30px
         h2
-            width: 370px
             text-align: center
             font-size: 24px
             font-weight: 600
-            padding: 5px 10px
-            border-radius: 8px
-            background-color: $orange
-            color: #fff
-            margin: 10px auto 20px
+            color: #9643FF
+            font-family: Niramit, Arial, Helvetica, sans-serif
+            margin: 10px 0 20px
 
     .whatCan
-        margin-top: 80px
+        margin-top: 100px
         h2
             text-align: center
-            color: #FB7433
-            font-family: Michroma
+            color: #9643FF
+            font-family: Niramit, Arial, Helvetica, sans-serif
             font-size: 22px
             font-weight: 600
         .icons
             display: flex
-            justify-content: space-between
+            justify-content: space-around
             align-items: center
             flex-wrap: wrap
-            gap: 20px 50px
-            margin: 20px auto
-            width: 70%
+            gap: 50px
+            margin: 50px auto
+            width: 80%
             .icon
-                width: 280px
+                width: 292px
                 display: flex
                 align-items: center
                 gap: 15px
@@ -107,28 +114,35 @@ main
                 img
                     width: 40px
                 h4
-                    color: #000
-                    font-family: Michroma
+                    color: #00FFB2
+                    font-family: Niramit, Arial, Helvetica, sans-serif
+                    font-size: 22px
+                    font-weight: 500
                     font-size: 18px
-                    font-weight: 400
 
 .banner
     margin-top: 80px
-    background-image: url(../icons/about/bgAmazon.jpg)
+    background-image: url(../icons/about/background.jpg)
     background-repeat: no-repeat
+    background-position: 0px -115px
     background-size: cover
-    padding: 20px 0
-    height: 370px
+    height: 500px
+    .wrapper
+        background: rgba(0, 0, 0, 0.4)
+        height: 100%
+
     h3
         width: 80%
         text-align: center
-        color: #FB7433
-        font-family: Michroma
+        color: #fff
+        font-family: Niramit, Arial, Helvetica, sans-serif
         font-size: 22px
         font-weight: 600
-        margin: 20px auto 0
+        margin: 50px auto 0
+        padding-top: 30px
+
     .browsers
-        margin-top: 20px
+        margin-top: 30px
         display: flex
         justify-content: center
         align-items: center
@@ -140,28 +154,35 @@ main
 
 .footer
     padding: 30px 20px
-    background: #D9D9D9
+    background: #181818
+    margin-top: 50px
     h3
         text-align: center
-        color: #FB7433
-        font-family: Michroma
+        color: #9643FF
+        font-family: Niramit, Arial, Helvetica, sans-serif
         font-size: 22px
         font-weight: 600
     p
         font-size: 20px
         font-weight: 500
         margin-top: 30px
-        color: #040404
+        color: #00FFB2
         text-align: center
+        span
+            color: #00FFB2
+            font-family: Niramit, Arial, Helvetica, sans-serif
+            font-size: 20px
+            font-weight: 600
     .technology
         p
             text-align: center
-            color: #FB7433
-            font-family: Michroma
-            font-size: 18px
+            color: #9643FF
+            font-family: Niramit, Arial, Helvetica, sans-serif
+            font-size: 22px
             font-weight: 600
 
         ul
+            margin: 30px 0
             display: flex
             flex-wrap: wrap
             gap: 40px
@@ -169,10 +190,10 @@ main
             justify-content: center
             flex-wrap: wrap
             li
-                font-size: 16px
+                font-size: 18px
                 font-weight: 500
                 margin-top: 30px
-                color: #040404
+                color: #00FFB2
                 margin-top: 10px
 
 @media (max-width: 768px)
